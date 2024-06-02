@@ -1,0 +1,46 @@
+﻿@model IEnumerable<InvoiceDTO>
+@using UiDoAn.Models.DTO
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoices</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Invoices</h1>
+        @foreach (var invoice in Model)
+        {
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h5 class="card-title">Invoice Number: @invoice.Id</h5>
+                </div>
+                <div class="card-body">
+                    <p>Date: @invoice.Date.ToShortDateString()</p>
+                    <p>Total Amount: @invoice.Price</p>
+                    <table class="table table-sm mt-3">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var product in invoice.InvoiceProducts)
+                            {
+                                <tr>
+                                    <td>@product.Product?.Name</td>
+                                    <td>@product.Quantity</td>
+                                    <td>@product.Price</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

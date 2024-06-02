@@ -1,0 +1,10 @@
+D:\MVC\UiDoAn\UiDoAn\UiDoAn\obj\Release\net6.0\PubTmp\Out\UiDoAn.exe
+D:\MVC\UiDoAn\UiDoAn\UiDoAn\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+D:\MVC\UiDoAn\UiDoAn\UiDoAn\obj\Release\net6.0\PubTmp\Out\appsettings.json
+D:\MVC\UiDoAn\UiDoAn\UiDoAn\obj\Release\net6.0\PubTmp\Out\UiDoAn.dll
+D:\MVC\UiDoAn\UiDoAn\UiDoAn\obj\Release\net6.0\PubTmp\Out\UiDoAn.deps.json
+D:\MVC\UiDoAn\UiDoAn\UiDoAn\obj\Release\net6.0\PubTmp\Out\UiDoAn.runtimeconfig.json
+D:\MVC\UiDoAn\UiDoAn\UiDoAn\obj\Release\net6.0\PubTmp\Out\UiDoAn.pdb
+D:\MVC\UiDoAn\UiDoAn\UiDoAn\obj\Release\net6.0\PubTmp\Out\System.Net.Http.Formatting.dll
+D:\MVC\UiDoAn\UiDoAn\UiDoAn\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
+D:\MVC\UiDoAn\UiDoAn\UiDoAn\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.Bson.dll

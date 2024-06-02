@@ -1,0 +1,51 @@
+﻿@using UiDoAn.Models.ViewModel
+@model List<ProductCartVm>
+@{
+    ViewBag.Title = "";
+}
+
+<h2>Your Cart</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Action</th> <!-- Added new column for the action button -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.product.Name</td>
+                    <td>@item.OrderQuanity</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <form method="post" action="@Url.Action("RemoveFromCart", "Cart")">
+                            <input type="hidden" name="productId" value="@item.product.Id" />
+                            <button type="submit" class="btn btn-danger">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <form method="post" action="@Url.Action("Buy", "Cart")">
+        <button type="submit" class="btn btn-primary">Buy</button>
+    </form>
+}
+else
+{
+    <p>Your cart is empty.</p>
+}

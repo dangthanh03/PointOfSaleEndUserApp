@@ -1,0 +1,59 @@
+﻿@model IEnumerable<UiDoAn.Models.Domain.Product>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Product List</h1>
+
+        <!-- Thanh tìm kiếm -->
+        <form class="mt-3 mb-3">
+            <div class="input-group">
+                <input type="text" class="form-control" name="searchTerm" placeholder="Search...">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Add to Cart</th> <!-- Thêm cột cho button "Add to Cart" -->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Quantity</td>
+                        <td>@product.Price</td>
+                        <td>
+                            <!-- Thêm button "Add to Cart" -->
+                            <form method="get" action="@Url.Action("AddToCart", "Cart")">
+                                <input type="hidden" name="productId" value="@product.Id" />
+                                <div class="input-group">
+                                    <input type="number" class="form-control" name="quantity" value="1" min="1">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="submit">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
